@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class = 'container'>
+        <table class = 'table' border='1px'>
+            <thead>
+                <tr width = '600px'>
+                    <th width = '200px'>Name</th>
+                    <th width = '200px'>Income</th>
+                    <th width = '200px'>Expense</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% expenselist.forEach(function(expense) { %>
+                <tr>
+                    <th><%= expense.name %></th>
+                    <th><%= expense.income %></th>
+                    <th><%= expense.spend %></th>
+                <% }); %>
+                <% saving.forEach(function(expense) { %>
+                    <th><%= expense.saving %></th>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Enter data here:</h3>
+    <div class = 'container1'>
+        <form method='POST' action='/api/ex/expense'>
+            <label for = 'name'>Full Name:</label>
+            <input type = 'text' id = 'name' name = 'name'>
+            <label for = 'income'>Income:</label>
+            <input type = 'text' id = 'income' name = 'income'>
+            <label for = 'expense'>Expense:</label>
+            <input type = 'text' id = 'expense' name = 'expense'>
+        </form>
+
+        <button type = 'submit' class = 'btn btn-default'>Submit</button>
+    </div>
+</body>
+</html>
