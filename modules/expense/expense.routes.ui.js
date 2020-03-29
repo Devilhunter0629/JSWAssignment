@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/', async (req, res, next) => {
-    let saving = await ExpenseController.add();
+    let saving = await ExpenseController.save();
     console.log(expenselist);
     res.render('expense/index', {
         saving
